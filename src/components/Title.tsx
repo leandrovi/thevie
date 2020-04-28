@@ -8,7 +8,7 @@ const Title: React.FC<{}> = () => (
     <style jsx>
       {`
         .title a {
-          color: #0070f3;
+          color: #fff;
           text-decoration: none;
         }
 
