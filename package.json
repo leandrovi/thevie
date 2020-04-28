@@ -1,13 +1,12 @@
 {
-  "name": "typescript-nextjs-starter",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
+  "name": "thevie",
+  "description": "TheVie intitutional website",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <oi@joaopedro.cc> (joaopedro.cc)",
+  "author": "Leandro Vieira <leandro@thevie.com.br> (thevie.com.br)",
   "license": "MIT",
   "keywords": [
     "nextjs",
-    "starter",
     "typescript"
   ],
   "scripts": {
@@ -34,7 +33,8 @@
   "dependencies": {
     "next": "9.3.2",
     "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react-dom": "16.13.0",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -42,9 +42,11 @@
     "@types/node": "^13.9.2",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "3.1.0",
     "eslint": "^6.8.0",

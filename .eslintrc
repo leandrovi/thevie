@@ -14,7 +14,14 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier/react"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier/react",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
   "rules": {
     "prettier/prettier": "error",
@@ -22,6 +29,9 @@
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
+    "no-unused-expressions": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",
