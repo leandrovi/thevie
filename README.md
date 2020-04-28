@@ -14,4 +14,4 @@ Under construction.
 
 ---
 
-Made with ♥ by (leandrovi)[https://www.github.com.br/leandrovi]
+Made with ♥ by [leandrovi](https://www.github.com.br/leandrovi)
