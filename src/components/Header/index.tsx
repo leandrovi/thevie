@@ -9,6 +9,11 @@ const Header: NextComponentType = () => {
     <Container>
       <ul>
         <li>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/work">
             <a>Work</a>
           </Link>
@@ -16,11 +21,6 @@ const Header: NextComponentType = () => {
         <li>
           <Link href="/work/fusics">
             <a>Fusics</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Home</a>
           </Link>
         </li>
       </ul>

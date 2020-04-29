@@ -1,5 +1,7 @@
 import React from 'react';
 
+import palette from '@/styles/palette';
+
 const Title: React.FC<{}> = () => (
   <>
     <h1 className="title">
@@ -8,7 +10,7 @@ const Title: React.FC<{}> = () => (
     <style jsx>
       {`
         .title a {
-          color: #fff;
+          color: ${palette.grayShades.white};
           text-decoration: none;
         }
 

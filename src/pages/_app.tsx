@@ -1,13 +1,30 @@
 import React from 'react';
-import App from 'next/app';
-
+import App, { AppProps } from 'next/app';
 import { PageTransition } from 'next-page-transitions';
 
 import GlobalStyle from '@/styles/global';
 
-import Header from '@/components/Header';
+import InitialAnimation from '@/components/InitialAnimation';
 
-export default class MyApp extends App {
+interface MyAppState {
+  loading: boolean;
+}
+
+export default class MyApp extends App<AppProps, {}, MyAppState> {
+  constructor(props: AppProps) {
+    super(props);
+
+    this.state = {
+      loading: true,
+    };
+  }
+
+  componentDidMount(): void {
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 3000);
+  }
+
   static async getInitialProps({ Component, ctx }): Promise<any> {
     let pageProps = {};
 
@@ -20,29 +37,25 @@ export default class MyApp extends App {
 
   render(): JSX.Element {
     const { Component, pageProps, router } = this.props;
+    const { loading } = this.state;
+
     return (
       <>
-        <PageTransition
-          skipInitialTransition
-          timeout={300}
-          classNames="page-transition"
-        >
-          <>
-            <Header />
-            <Component {...pageProps} key={router.route} />
-            <GlobalStyle />
-          </>
+        <GlobalStyle />
+
+        <PageTransition timeout={1000} classNames="page-transition">
+          <Component {...pageProps} key={router.route} />
         </PageTransition>
+
+        <InitialAnimation visible={loading} />
 
         <style jsx global>{`
           .page-transition-enter {
             opacity: 0;
-            transform: translate3d(0, 20px, 0);
           }
           .page-transition-enter-active {
             opacity: 1;
-            transform: translate3d(0, 0, 0);
-            transition: opacity 300ms, transform 300ms;
+            transition: opacity 300ms;
           }
           .page-transition-exit {
             opacity: 1;

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
+import palette from '@/styles/palette';
+
 export const Container = styled.div`
   width: 100%;
   height: 100px;
-  background: #fff;
+  background: ${palette.grayShades.white};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +23,7 @@ export const Container = styled.div`
       }
 
       a {
-        color: #333;
+        color: ${palette.grayShades.darkGray};
         text-decoration: none;
       }
     }

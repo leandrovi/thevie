@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 
+import palette from '@/styles/palette';
+
 export default createGlobalStyle`
   ${normalize}
 
@@ -13,7 +15,7 @@ export default createGlobalStyle`
 
   body {
     background: #312e38;
-    color: #fff;
+    color: ${palette.grayShades.white};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -28,5 +30,10 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 `;
