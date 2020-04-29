@@ -5,7 +5,7 @@ import palette from '@/styles/palette';
 
 export const Container = styled(animated.div)`
   background: ${palette.grayShades.black};
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;

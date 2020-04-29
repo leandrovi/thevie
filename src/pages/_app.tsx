@@ -11,6 +11,16 @@ interface MyAppState {
 }
 
 export default class MyApp extends App<AppProps, {}, MyAppState> {
+  static async getInitialProps({ Component, ctx }): Promise<any> {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
+  }
+
   constructor(props: AppProps) {
     super(props);
 
@@ -23,16 +33,6 @@ export default class MyApp extends App<AppProps, {}, MyAppState> {
     setTimeout(() => {
       this.setState({ loading: false });
     }, 3000);
-  }
-
-  static async getInitialProps({ Component, ctx }): Promise<any> {
-    let pageProps = {};
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
   }
 
   render(): JSX.Element {
