@@ -3,9 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-// Components
-import Title from '@/components/Title';
-
 // Styles
 const Container = styled.div`
   min-height: 100vh;
@@ -49,14 +46,14 @@ const Container = styled.div`
   }
 `;
 
-const Home: React.FC<{}> = () => (
+const Fusics: React.FC<{}> = () => (
   <Container>
     <Head>
       <title>Create Next App</title>
     </Head>
 
     <main>
-      <Title />
+      <h1>Fusics Page</h1>
     </main>
 
     <footer>
@@ -67,8 +64,12 @@ const Home: React.FC<{}> = () => (
       <Link href="/work">
         <a>Work</a>
       </Link>
+
+      <Link href="/">
+        <a>Voltar para home</a>
+      </Link>
     </footer>
   </Container>
 );
 
-export default Home;
+export default Fusics;

@@ -3,9 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-// Components
-import Title from '@/components/Title';
-
 // Styles
 const Container = styled.div`
   min-height: 100vh;
@@ -49,14 +46,22 @@ const Container = styled.div`
   }
 `;
 
-const Home: React.FC<{}> = () => (
+const Work: React.FC<{}> = () => (
   <Container>
     <Head>
       <title>Create Next App</title>
     </Head>
 
     <main>
-      <Title />
+      <h1>Work Page</h1>
+
+      <ul>
+        <li>
+          <Link href="/work/fusics">
+            <a>Fusics</a>
+          </Link>
+        </li>
+      </ul>
     </main>
 
     <footer>
@@ -64,11 +69,11 @@ const Home: React.FC<{}> = () => (
         Powered by leandrovi
       </a>
 
-      <Link href="/work">
-        <a>Work</a>
+      <Link href="/">
+        <a>Voltar para home</a>
       </Link>
     </footer>
   </Container>
 );
 
-export default Home;
+export default Work;
