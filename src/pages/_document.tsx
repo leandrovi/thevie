@@ -41,7 +41,10 @@ export default class MyDocument extends Document {
   render(): React.ReactElement {
     return (
       <Html lang="en-US">
-        <Head>{this.props.styles}</Head>
+        <Head>
+          <link rel="icon" type="image/png" href="/favicon.png" />
+          {this.props.styles}
+        </Head>
         <body>
           <Main />
           <NextScript />

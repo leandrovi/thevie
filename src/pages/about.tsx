@@ -16,7 +16,7 @@ const Main = styled.main`
   max-width: 900px;
 `;
 
-const Home: React.FC<{}> = () => (
+const About: React.FC<{}> = () => (
   <>
     <Layout>
       <Head>
@@ -24,10 +24,10 @@ const Home: React.FC<{}> = () => (
       </Head>
 
       <Main>
-        <h1>Home page</h1>
+        <h1>About Page</h1>
       </Main>
     </Layout>
   </>
 );
 
-export default Home;
+export default About;

@@ -43,9 +43,11 @@ export default class MyApp extends App<AppProps, {}, MyAppState> {
       <>
         <GlobalStyle />
 
-        <PageTransition timeout={1000} classNames="page-transition">
-          <Component {...pageProps} key={router.route} />
-        </PageTransition>
+        {!loading && (
+          <PageTransition timeout={300} classNames="page-transition">
+            <Component {...pageProps} key={router.route} />
+          </PageTransition>
+        )}
 
         <InitialAnimation visible={loading} />
 

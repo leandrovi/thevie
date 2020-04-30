@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { NextComponentType } from 'next';
 
-import { useScroll } from '@/hooks/useScroll';
+// import { useScroll } from '@/hooks/useScroll';
 
 import Meta from '@/components/Meta';
 import Header from '@/components/Header';
@@ -41,9 +41,11 @@ const Layout: NextComponentType = ({ children }) => {
     <>
       <Meta />
       {/* <FixedContainer dimensions={containerDimensions}> */}
-      <Header />
       <Container ref={containerRef} position={0}>
+        <Header bgHeight={200} hideNav={false} />
+
         {children}
+
         <Footer />
       </Container>
       {/* </FixedContainer> */}

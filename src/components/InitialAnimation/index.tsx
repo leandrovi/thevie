@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { useTransition } from 'react-spring';
 
 import { Container, Logo } from './styles';
@@ -19,6 +20,10 @@ const Loader: React.FC<LoaderProps> = ({ visible }) => {
 
   return (
     <div>
+      <Head>
+        <title>TheVÏe</title>
+      </Head>
+
       {transitions.map(
         ({ item, key, props }) =>
           item && (

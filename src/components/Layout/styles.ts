@@ -23,6 +23,8 @@ export const Container = styled.div<ContainerProps>`
   /* width: calc(100% - 40px); */
   width: 100%;
   margin: 0 auto;
+  padding: 90px 0 0;
+  position: relative;
 
   display: flex;
   flex-direction: column;
