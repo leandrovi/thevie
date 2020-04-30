@@ -14,7 +14,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #312e38;
+    background: ${palette.grayShades.black};
     color: ${palette.grayShades.white};
     -webkit-font-smoothing: antialiased;
   }

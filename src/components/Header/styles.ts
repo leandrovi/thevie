@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 import { animated } from 'react-spring';
 
 import palette from '@/styles/palette';
+import zIndex from '@/styles/zIndex';
+import device from '@/styles/device';
 
 interface ContainerProps {
   showBg: boolean;
@@ -9,64 +11,86 @@ interface ContainerProps {
 
 export const Container = styled.header<ContainerProps>`
   width: 100%;
-  height: 90px;
-  padding: 20px 35px;
-  background: transparent;
-  transition: background 0.2s ease-in-out;
 
-  ${props =>
-    props.showBg &&
-    css`
-      background: ${palette.grayShades.black};
-    `}
+  @media ${device.laptop} {
+    height: 90px;
+    padding: 20px 35px;
+    background: transparent;
+    transition: background 0.2s ease-in-out;
 
-  position: fixed;
-  top: 0;
-  left: 0;
+    ${props =>
+      props.showBg &&
+      css`
+        background: ${palette.grayShades.black};
+      `}
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: ${zIndex.header};
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media ${device.tabletLandscape} {
+    display: none;
+  }
 `;
 
 export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @media ${device.laptop} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    color: ${palette.grayShades.white};
-    position: relative;
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: ${palette.grayShades.white};
+      position: relative;
 
-    & + a {
-      margin-left: 70px;
+      & + a {
+        margin-left: 70px;
+      }
+
+      img {
+        width: 120px;
+        margin-right: 50px;
+      }
     }
+  }
 
-    img {
-      width: 120px;
-      margin-right: 50px;
-    }
+  @media ${device.tabletLandscape} {
+    display: none;
   }
 `;
 
 export const Slogan = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  @media ${device.laptop} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
 
-  p {
-    font-weight: bold;
+    p {
+      font-weight: bold;
+    }
   }
 `;
 
 export const Line = styled(animated.span)`
-  display: block;
-  height: 1px;
-  background: #fff;
+  @media ${device.laptop} {
+    display: block;
+    height: 1px;
+    background: #fff;
 
-  position: absolute;
-  top: calc(100% + 5px);
+    position: absolute;
+    top: calc(100% + 5px);
+  }
+
+  @media ${device.tabletLandscape} {
+    display: none;
+  }
 `;
