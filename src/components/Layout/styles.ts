@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import device from '@/styles/device';
+
 // interface FixedContainerProps {
 //   dimensions: {
 //     width: number;
@@ -23,8 +25,8 @@ export const Container = styled.div<ContainerProps>`
   /* width: calc(100% - 40px); */
   width: 100%;
   margin: 0 auto;
-  padding: 90px 0 0;
   position: relative;
+  padding: 70px 28px 0;
 
   display: flex;
   flex-direction: column;
@@ -38,4 +40,8 @@ export const Container = styled.div<ContainerProps>`
     `} */
 
   transition: transform ease-in-out;
+
+  @media ${device.laptop} {
+    padding: 90px 0 0;
+  }
 `;

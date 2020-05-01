@@ -5,7 +5,14 @@ import { useTransition } from 'react-spring';
 
 import { useScroll } from '@/hooks/useScroll';
 
-import { Container, Nav, Slogan, Line } from './styles';
+import {
+  Container,
+  MobileLogoWrapper,
+  MenuButton,
+  Nav,
+  Slogan,
+  Line,
+} from './styles';
 
 interface HeaderProps {
   bgHeight: number;
@@ -14,6 +21,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ bgHeight, hideNav }) => {
   const [showBg, setShowBg] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const router = useRouter();
   const { scrollY } = useScroll();
 
@@ -35,8 +43,25 @@ const Header: React.FC<HeaderProps> = ({ bgHeight, hideNav }) => {
     leave: { width: '0%', opacity: 0, left: '50%' },
   });
 
+  const toggleMenu = useCallback(() => {
+    menuIsOpen ? setMenuIsOpen(false) : setMenuIsOpen(true);
+  }, [menuIsOpen]);
+
   return (
     <Container showBg={showBg}>
+      {/* Mobile Components */}
+      <MobileLogoWrapper>
+        <img src="/icons/logo.svg" alt="TheVïe" />
+      </MobileLogoWrapper>
+
+      <MenuButton onClick={toggleMenu} open={!!menuIsOpen} type="button">
+        <span>
+          <span className="top" />
+          <span className="bottom" />
+        </span>
+      </MenuButton>
+
+      {/* Desktop Components */}
       <Nav>
         <Link href="/">
           <a>
