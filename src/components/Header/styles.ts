@@ -33,10 +33,6 @@ export const Container = styled.header<ContainerProps>`
     align-items: center;
     justify-content: space-between;
   }
-
-  @media ${device.tabletLandscape} {
-    display: none;
-  }
 `;
 
 export const Nav = styled.nav`
@@ -61,10 +57,6 @@ export const Nav = styled.nav`
       }
     }
   }
-
-  @media ${device.tabletLandscape} {
-    display: none;
-  }
 `;
 
 export const Slogan = styled.div`
@@ -88,9 +80,5 @@ export const Line = styled(animated.span)`
 
     position: absolute;
     top: calc(100% + 5px);
-  }
-
-  @media ${device.tabletLandscape} {
-    display: none;
   }
 `;
