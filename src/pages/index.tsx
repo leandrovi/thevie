@@ -6,7 +6,7 @@ import HomeSlider from '@/components/HomeSlider';
 
 const Home: React.FC<{}> = () => (
   <>
-    <Layout>
+    <Layout hideFooter>
       <Head>
         <title>TheVÏe</title>
       </Head>

@@ -12,7 +12,6 @@ export const Container = styled.div`
   left: 0;
 
   /* Temporary */
-  background: #aaa;
   display: flex;
   align-items: center;
   justify-content: center;

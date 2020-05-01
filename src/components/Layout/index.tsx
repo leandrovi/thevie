@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { NextComponentType } from 'next';
+// import { NextComponentType } from 'next';
 
 // import { useScroll } from '@/hooks/useScroll';
 
@@ -9,12 +9,16 @@ import Footer from '@/components/Footer';
 
 import { Container } from './styles';
 
+interface LayoutProps {
+  hideFooter?: boolean;
+}
+
 interface ContainerDimensions {
   width: number;
   height: number;
 }
 
-const Layout: NextComponentType = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ hideFooter = false, children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   // const { scrollX, scrollY, scrollDirection } = useScroll();
 
@@ -46,7 +50,7 @@ const Layout: NextComponentType = ({ children }) => {
 
         {children}
 
-        <Footer />
+        {!hideFooter && <Footer />}
       </Container>
       {/* </FixedContainer> */}
     </>
