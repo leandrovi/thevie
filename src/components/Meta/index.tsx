@@ -64,7 +64,16 @@ const Meta: NextComponentType = () => {
         color=`${palette.grayShades.black}`
       />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" /> */}
-
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      />
       <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap"
         rel="stylesheet"

@@ -1,8 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+import styled from 'styled-components';
 
 import Layout from '@/components/Layout';
 import HomeSlider from '@/components/HomeSlider';
+
+const Main = styled.main`
+  width: 100%;
+  height: 100%;
+`;
 
 const Home: React.FC<{}> = () => (
   <>
@@ -11,9 +17,9 @@ const Home: React.FC<{}> = () => (
         <title>TheVÏe</title>
       </Head>
 
-      <main>
+      <Main>
         <HomeSlider />
-      </main>
+      </Main>
     </Layout>
   </>
 );

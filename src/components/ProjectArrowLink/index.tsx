@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Container } from './styles';
+import { Container, Wrapper } from './styles';
 
 interface ProjectArrowLinkProps {
   href: string;
@@ -15,15 +15,19 @@ const ProjectArrowLink: React.FC<ProjectArrowLinkProps> = ({
   text = 'View project',
 }) => {
   return (
-    <Container direction={direction}>
+    <Container>
       <Link href={href}>
-        <a>{text}</a>
-      </Link>
+        <a>
+          <Wrapper direction={direction}>
+            <p>{text}</p>
 
-      <div>
-        <span />
-        <span />
-      </div>
+            <div>
+              <span />
+              <span />
+            </div>
+          </Wrapper>
+        </a>
+      </Link>
     </Container>
   );
 };

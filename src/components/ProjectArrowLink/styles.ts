@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components';
 
 import palette from '@/styles/palette';
 
-interface ContainerProps {
+interface WrapperProps {
   direction: 'left' | 'right';
 }
 
 const linesDirectionVariations = {
   left: css`
-    a {
+    p {
       transform: translateX(-5px);
     }
 
@@ -27,7 +27,7 @@ const linesDirectionVariations = {
     }
   `,
   right: css`
-    a {
+    p {
       transform: translateX(5px);
     }
 
@@ -56,12 +56,18 @@ const linesContainerVariations = {
   `,
 };
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
   position: absolute;
   bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +85,7 @@ export const Container = styled.div<ContainerProps>`
     ${props => linesDirectionVariations[props.direction || 'right']}
   }
 
-  a {
+  p {
     font-size: 11px;
     font-weight: 500;
     transition: transform 0.2s;
