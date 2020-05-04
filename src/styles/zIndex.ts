@@ -6,6 +6,6 @@ export default {
     controls: 10,
   },
   header: 10,
-  mobileMenu: 12,
+  mobileMenu: 10,
   buttonMenuActive: 20,
 };

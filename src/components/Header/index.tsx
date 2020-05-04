@@ -5,6 +5,8 @@ import { useTransition } from 'react-spring';
 
 import { useScroll } from '@/hooks/useScroll';
 
+import links from '@/utils/navigationLinks';
+
 import {
   Container,
   MobileLogoWrapper,
@@ -17,9 +19,16 @@ import {
 interface HeaderProps {
   bgHeight: number;
   hideNav: boolean;
+  menuOpen: boolean;
+  toggleMenuComponent(menuOpen: boolean): void;
 }
 
-const Header: React.FC<HeaderProps> = ({ bgHeight, hideNav }) => {
+const Header: React.FC<HeaderProps> = ({
+  bgHeight,
+  hideNav,
+  menuOpen,
+  toggleMenuComponent,
+}) => {
   const [showBg, setShowBg] = useState(false);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const router = useRouter();
@@ -35,7 +44,8 @@ const Header: React.FC<HeaderProps> = ({ bgHeight, hideNav }) => {
 
   useEffect(() => {
     toggleBackground();
-  }, [toggleBackground]);
+    setMenuIsOpen(menuOpen);
+  }, [toggleBackground, menuOpen]);
 
   const linesWithTransition = useTransition(router.pathname, null, {
     from: { width: '0%', opacity: 0, left: '50%' },
@@ -43,18 +53,31 @@ const Header: React.FC<HeaderProps> = ({ bgHeight, hideNav }) => {
     leave: { width: '0%', opacity: 0, left: '50%' },
   });
 
-  const toggleMenu = useCallback(() => {
-    menuIsOpen ? setMenuIsOpen(false) : setMenuIsOpen(true);
-  }, [menuIsOpen]);
+  const toggleMenu = useCallback(
+    (open: boolean) => {
+      open ? setMenuIsOpen(false) : setMenuIsOpen(true);
+
+      toggleMenuComponent(!open);
+    },
+    [toggleMenuComponent],
+  );
 
   return (
     <Container showBg={showBg}>
       {/* Mobile Components */}
-      <MobileLogoWrapper>
-        <img src="/icons/logo.svg" alt="TheVïe" />
+      <MobileLogoWrapper menuOpen={menuIsOpen}>
+        <Link href="/">
+          <a>
+            <img src="/icons/logo.svg" alt="TheVïe" />
+          </a>
+        </Link>
       </MobileLogoWrapper>
 
-      <MenuButton onClick={toggleMenu} open={!!menuIsOpen} type="button">
+      <MenuButton
+        onClick={() => toggleMenu(menuIsOpen)}
+        open={!!menuIsOpen}
+        type="button"
+      >
         <span>
           <span className="top" />
           <span className="bottom" />
@@ -69,37 +92,18 @@ const Header: React.FC<HeaderProps> = ({ bgHeight, hideNav }) => {
           </a>
         </Link>
 
-        {!hideNav && (
-          <>
-            <Link href="/work">
+        {!hideNav &&
+          links.map(link => (
+            <Link key={link.path} href={link.path}>
               <a>
-                Work
+                {link.title}
                 {linesWithTransition.map(
                   ({ item, key, props }) =>
-                    item === '/work' && <Line key={key} style={props} />,
+                    item === link.path && <Line key={key} style={props} />,
                 )}
               </a>
             </Link>
-            <Link href="/about">
-              <a>
-                Who we are?
-                {linesWithTransition.map(
-                  ({ item, key, props }) =>
-                    item === '/about' && <Line key={key} style={props} />,
-                )}
-              </a>
-            </Link>
-            <Link href="/sayhello">
-              <a>
-                Get in touch
-                {linesWithTransition.map(
-                  ({ item, key, props }) =>
-                    item === '/sayhello' && <Line key={key} style={props} />,
-                )}
-              </a>
-            </Link>
-          </>
-        )}
+          ))}
       </Nav>
 
       <Slogan>

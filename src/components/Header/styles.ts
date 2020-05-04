@@ -4,9 +4,14 @@ import { animated } from 'react-spring';
 import palette from '@/styles/palette';
 import zIndex from '@/styles/zIndex';
 import device from '@/styles/device';
+import headerHeights from '@/styles/headerHeights';
 
 interface ContainerProps {
   showBg: boolean;
+}
+
+interface MobileLogoWrapperProps {
+  menuOpen: boolean;
 }
 
 interface MenuButtonProps {
@@ -15,31 +20,28 @@ interface MenuButtonProps {
 
 export const Container = styled.header<ContainerProps>`
   width: 100%;
+  height: ${headerHeights.mobile}px;
+  padding: 15px 28px;
+  z-index: ${zIndex.header};
+  background: transparent;
+  transition: background 0.2s ease-in-out;
 
-  @media ${device.mobile} {
-    height: 70px;
-    padding: 15px 28px;
-    z-index: ${zIndex.header};
-    background: transparent;
-    transition: background 0.2s ease-in-out;
+  ${props =>
+    props.showBg &&
+    css`
+      background: ${palette.grayShades.black};
+    `}
 
-    ${props =>
-      props.showBg &&
-      css`
-        background: ${palette.grayShades.black};
-      `}
+  position: fixed;
+  top: 0;
+  left: 0;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @media ${device.laptop} {
-    height: 90px;
+    height: ${headerHeights.desktops}px;
     padding: 20px 35px;
   }
 `;
@@ -48,9 +50,15 @@ export const Container = styled.header<ContainerProps>`
  * Mobile Components
  */
 
-export const MobileLogoWrapper = styled.div`
+export const MobileLogoWrapper = styled.div<MobileLogoWrapperProps>`
   img {
     width: 90px;
+
+    ${props =>
+      props.menuOpen &&
+      css`
+        opacity: 0.25;
+      `}
   }
 
   @media ${device.laptop} {
@@ -91,7 +99,8 @@ export const MenuButton = styled.button<MenuButtonProps>`
       background: ${palette.grayShades.white};
       transition:
         width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     span.top {
@@ -109,6 +118,8 @@ export const MenuButton = styled.button<MenuButtonProps>`
       z-index: ${zIndex.buttonMenuActive};
 
       > span {
+        opacity: 0.3;
+
         span.top {
           width: 100% !important;
           transform-origin: center;

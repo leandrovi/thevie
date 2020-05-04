@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import device from '@/styles/device';
+import headerHeights from '@/styles/headerHeights';
 
 // interface FixedContainerProps {
 //   dimensions: {
@@ -26,7 +27,10 @@ export const Container = styled.div<ContainerProps>`
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: 70px 28px 0;
+  padding-top: ${headerHeights.mobile}px;
+  padding-right: 28px;
+  padding-left: 28px;
+  padding-bottom: 0px;
 
   display: flex;
   flex-direction: column;
@@ -42,6 +46,9 @@ export const Container = styled.div<ContainerProps>`
   transition: transform ease-in-out;
 
   @media ${device.laptop} {
-    padding: 90px 0 0;
+    padding-top: ${headerHeights.desktops}px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
   }
 `;
