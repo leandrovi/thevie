@@ -6,7 +6,14 @@ import ProjectArrowLink from '@/components/ProjectArrowLink';
 
 import projects from '@/utils/projectsResume';
 
-import { Container, SliderWrapper, Item, Content, Indicators } from './styles';
+import {
+  Container,
+  SliderWrapper,
+  Item,
+  Content,
+  Title,
+  Indicators,
+} from './styles';
 
 const HomeSlider: NextComponentType = () => {
   return (
@@ -34,6 +41,10 @@ const HomeSlider: NextComponentType = () => {
             <Item key={project.id}>
               <Content>
                 <img src={project.thumbImgSrc} alt={project.name} />
+
+                <Title>
+                  <img src={project.titleImgSrc} alt={project.name} />
+                </Title>
 
                 <ProjectArrowLink
                   href={project.projectHref}

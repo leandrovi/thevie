@@ -54,11 +54,24 @@ export const Content = styled.figure`
   height: 100%;
   position: relative;
 
-  img {
+  > img {
     width: 100%;
     height: 100vh;
     object-fit: cover;
     object-position: center;
+    opacity: 0.5;
+  }
+`;
+
+export const Title = styled.div`
+  width: 104%;
+  position: absolute;
+  top: 50%;
+  left: -2%;
+  transform: translateY(-50%);
+
+  img {
+    object-fit: contain;
   }
 `;
 
