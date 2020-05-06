@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextComponentType } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 
@@ -19,7 +20,7 @@ const Main = styled.main`
   }
 `;
 
-const Fusics: React.FC<{}> = () => (
+const Fusics: NextComponentType = () => (
   <>
     <Layout>
       <Head>
@@ -32,5 +33,9 @@ const Fusics: React.FC<{}> = () => (
     </Layout>
   </>
 );
+
+Fusics.getInitialProps = async () => {
+  return { transitionType: 'fade' };
+};
 
 export default Fusics;

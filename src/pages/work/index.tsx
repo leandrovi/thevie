@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextComponentType } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
@@ -20,7 +21,7 @@ const Main = styled.main`
   }
 `;
 
-const Work: React.FC<{}> = () => (
+const Work: NextComponentType = () => (
   <>
     <Layout>
       <Head>
@@ -41,5 +42,9 @@ const Work: React.FC<{}> = () => (
     </Layout>
   </>
 );
+
+Work.getInitialProps = async () => {
+  return { transitionType: 'fade' };
+};
 
 export default Work;

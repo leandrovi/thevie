@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextComponentType } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 
@@ -16,7 +17,7 @@ const Main = styled.main`
   max-width: 900px;
 `;
 
-const About: React.FC<{}> = () => (
+const About: NextComponentType = () => (
   <>
     <Layout>
       <Head>
@@ -29,5 +30,9 @@ const About: React.FC<{}> = () => (
     </Layout>
   </>
 );
+
+About.getInitialProps = async () => {
+  return { transitionType: 'fade' };
+};
 
 export default About;

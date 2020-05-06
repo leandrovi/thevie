@@ -44,7 +44,10 @@ export default class MyApp extends App<AppProps, {}, MyAppState> {
         <GlobalStyle />
 
         {!loading && (
-          <PageTransition timeout={300} classNames="page-transition">
+          <PageTransition
+            timeout={1000}
+            classNames={`page-transition-${pageProps.transitionType}`}
+          >
             <Component {...pageProps} key={router.route} />
           </PageTransition>
         )}
@@ -52,19 +55,34 @@ export default class MyApp extends App<AppProps, {}, MyAppState> {
         <InitialAnimation visible={loading} />
 
         <style jsx global>{`
-          .page-transition-enter {
+          .page-transition-fade-enter {
             opacity: 0;
           }
-          .page-transition-enter-active {
+          .page-transition-fade-enter-active {
             opacity: 1;
             transition: opacity 300ms;
           }
-          .page-transition-exit {
+          .page-transition-fade-exit {
             opacity: 1;
           }
-          .page-transition-exit-active {
+          .page-transition-fade-exit-active {
             opacity: 0;
             transition: opacity 300ms;
+          }
+
+          .transition-slide-enter {
+            transform: translateX(-100%);
+          }
+          .transition-slide-enter-active {
+            transform: translateX(0);
+            transition: transform 500ms ease-out;
+          }
+          .transition-slide-exit {
+            transform: translateX(0);
+          }
+          .transition-slide-exit-active {
+            transform: translateX(100%);
+            transition: transform 500ms ease-in;
           }
         `}</style>
       </>

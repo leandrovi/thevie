@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextComponentType } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 
@@ -10,7 +11,7 @@ const Main = styled.main`
   height: 100%;
 `;
 
-const Home: React.FC<{}> = () => (
+const Home: NextComponentType = () => (
   <>
     <Layout hideFooter>
       <Head>
@@ -23,5 +24,9 @@ const Home: React.FC<{}> = () => (
     </Layout>
   </>
 );
+
+Home.getInitialProps = async () => {
+  return { transitionType: 'fade' };
+};
 
 export default Home;
