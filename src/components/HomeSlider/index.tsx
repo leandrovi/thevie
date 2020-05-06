@@ -53,6 +53,7 @@ const HomeSlider: NextComponentType = () => {
           slidesToScroll={1}
           pauseOnDotsHover
           adaptiveHeight
+          fade
           customPaging={i => (
             <Indicators>
               <p>{i + 1}</p>
