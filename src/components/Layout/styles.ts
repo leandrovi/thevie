@@ -28,8 +28,6 @@ export const Container = styled.div<ContainerProps>`
   margin: 0 auto;
   position: relative;
   padding-top: ${headerHeights.mobile}px;
-  padding-right: 28px;
-  padding-left: 28px;
   padding-bottom: 0px;
 
   display: flex;

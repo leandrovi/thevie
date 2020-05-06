@@ -14,7 +14,8 @@ export const Container = styled(animated.div)`
 
   padding: 0px 28px;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  max-height: 800px;
   background: ${palette.grayShades.black};
 
   display: flex;

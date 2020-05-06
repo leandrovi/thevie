@@ -1,24 +1,18 @@
 import React from 'react';
 import { NextComponentType } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 import Layout from '@/components/Layout';
+import ProjectThumb from '@/components/ProjectThumb';
+
+import projects from '@/utils/projectsResume';
 
 // Styles
 const Main = styled.main`
-  padding: 5rem 0;
+  width: 100%;
+  height: 100%;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
 `;
 
 const Work: NextComponentType = () => (
@@ -29,15 +23,15 @@ const Work: NextComponentType = () => (
       </Head>
 
       <Main>
-        <h1>Work Page</h1>
-
-        <ul>
-          <li>
-            <Link href="/work/fusics">
-              <a>Fusics</a>
-            </Link>
-          </li>
-        </ul>
+        {projects.map(project => (
+          <ProjectThumb
+            key={project.id}
+            name={project.name}
+            title={project.titleImgSrc}
+            thumb={project.thumbImgSrc}
+            href={project.projectHref}
+          />
+        ))}
       </Main>
     </Layout>
   </>
