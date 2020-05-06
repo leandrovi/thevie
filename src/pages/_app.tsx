@@ -45,7 +45,7 @@ export default class MyApp extends App<AppProps, {}, MyAppState> {
 
         {!loading && (
           <PageTransition
-            timeout={1000}
+            timeout={300}
             classNames={`page-transition-${pageProps.transitionType}`}
           >
             <Component {...pageProps} key={router.route} />
@@ -68,21 +68,6 @@ export default class MyApp extends App<AppProps, {}, MyAppState> {
           .page-transition-fade-exit-active {
             opacity: 0;
             transition: opacity 300ms;
-          }
-
-          .transition-slide-enter {
-            transform: translateX(-100%);
-          }
-          .transition-slide-enter-active {
-            transform: translateX(0);
-            transition: transform 500ms ease-out;
-          }
-          .transition-slide-exit {
-            transform: translateX(0);
-          }
-          .transition-slide-exit-active {
-            transform: translateX(100%);
-            transition: transform 500ms ease-in;
           }
         `}</style>
       </>

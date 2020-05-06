@@ -22,7 +22,7 @@ const sliderItems = [
   {
     id: 1,
     url:
-      'https://cdn.pixabay.com/photo/2016/06/24/10/47/architecture-1477041_960_720.jpg',
+      'https://images.unsplash.com/photo-1588772666545-fa67e1bc0737?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80',
     alt: 'Architecture',
   },
   {
@@ -51,6 +51,7 @@ const HomeSlider: NextComponentType = () => {
           autoplaySpeed={3000}
           slidesToShow={1}
           slidesToScroll={1}
+          pauseOnDotsHover
           adaptiveHeight
           customPaging={i => (
             <Indicators>
