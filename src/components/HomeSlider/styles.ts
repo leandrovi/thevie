@@ -15,7 +15,6 @@ export const Container = styled.div`
   top: 0;
   left: 0;
 
-  /* Temporary */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +22,10 @@ export const Container = styled.div`
 
 export const SliderWrapper = styled.div`
   width: 100%;
+
+  .slick-slider .slick-list .slick-track .slick-active {
+    z-index: ${zIndex.homeSlider.activeImage};
+  }
 
   .slick-slider .slick-dots {
     bottom: 2.5%;

@@ -38,7 +38,8 @@
     "react-dom": "16.13.0",
     "react-slick": "^0.25.2",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "uuidv4": "^6.0.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -48,6 +49,7 @@
     "@types/react-dom": "^16.9.5",
     "@types/react-slick": "^0.23.4",
     "@types/styled-components": "^5.1.0",
+    "@types/uuidv4": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
     "babel-plugin-module-resolver": "^4.0.0",

@@ -1250,6 +1250,13 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
+"@types/uuidv4@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/uuidv4/-/uuidv4-5.0.0.tgz#2c94e67b0c06d5adb28fb7ced1a1b5f0866ecd50"
+  integrity sha512-xUrhYSJnkTq9CP79cU3svoKTLPCIbMMnu9Twf/tMpHATYSHCAAeDNeb2a/29YORhk5p4atHhCTMsIBU/tvdh6A==
+  dependencies:
+    uuidv4 "*"
+
 "@typescript-eslint/eslint-plugin@^2.24.0":
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.24.0.tgz#a86cf618c965a462cddf3601f594544b134d6d68"
@@ -8168,10 +8175,22 @@ util@^0.11.0:
   dependencies:
     inherits "2.0.3"
 
+uuid@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.0.0.tgz#bc6ccf91b5ff0ac07bbcdbf1c7c4e150db4dbb6c"
+  integrity sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw==
+
 uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuidv4@*, uuidv4@^6.0.8:
+  version "6.0.8"
+  resolved "https://registry.yarnpkg.com/uuidv4/-/uuidv4-6.0.8.tgz#4e0e698abdd62d5d43743837182dc42de1a7f9bb"
+  integrity sha512-d9nfWXtmCoAKVCEj5agRSyDa7S2rsHGtp/E9e/fJGrxoLKkXu6cFpXxJvWKHC5oBO69Jzwq/bXlK92JidXOcQQ==
+  dependencies:
+    uuid "8.0.0"
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
