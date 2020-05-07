@@ -7,7 +7,7 @@ import palette from '@/styles/palette';
 import headerHeights from '@/styles/headerHeights';
 
 export const Container = styled(animated.div)`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: ${zIndex.mobileMenu};
