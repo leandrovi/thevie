@@ -64,10 +64,10 @@ export const Content = styled.figure`
 `;
 
 export const Title = styled.div`
-  width: 104%;
+  width: 100%;
   position: absolute;
   top: 50%;
-  left: -2%;
+  left: 0%;
   transform: translateY(-50%);
 
   img {

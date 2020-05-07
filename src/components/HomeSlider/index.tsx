@@ -30,7 +30,6 @@ const HomeSlider: NextComponentType = () => {
           pauseOnDotsHover
           pauseOnHover={false}
           adaptiveHeight
-          fade
           customPaging={i => (
             <Indicators>
               <p>{i + 1}</p>
