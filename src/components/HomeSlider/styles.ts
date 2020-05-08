@@ -97,3 +97,10 @@ export const Indicators = styled.div`
     bottom: 0;
   }
 `;
+
+export const LinkWrapper = styled.div`
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+`;

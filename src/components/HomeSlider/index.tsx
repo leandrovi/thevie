@@ -13,6 +13,7 @@ import {
   Content,
   Title,
   Indicators,
+  LinkWrapper,
 } from './styles';
 
 const HomeSlider: NextComponentType = () => {
@@ -45,10 +46,12 @@ const HomeSlider: NextComponentType = () => {
                   <img src={project.titleImgSrc} alt={project.name} />
                 </Title>
 
-                <ProjectArrowLink
-                  href={project.projectHref}
-                  direction="right"
-                />
+                <LinkWrapper>
+                  <ProjectArrowLink
+                    href={project.projectHref}
+                    direction="right"
+                  />
+                </LinkWrapper>
               </Content>
             </Item>
           ))}

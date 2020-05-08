@@ -19,11 +19,11 @@ const ProjectThumb: React.FC<ProjectThumbProps> = ({
 }) => {
   return (
     <Container>
+      <img src={thumb} alt={name} />
+
       <Title>
         <img src={title} alt={name} />
       </Title>
-
-      <img src={thumb} alt={name} />
 
       <LinkWrapper>
         <ProjectArrowLink direction="right" href={href} />

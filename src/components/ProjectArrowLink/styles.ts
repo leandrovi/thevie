@@ -57,11 +57,6 @@ const linesContainerVariations = {
 };
 
 export const Container = styled.div`
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-
   display: flex;
   align-items: center;
   justify-content: center;
