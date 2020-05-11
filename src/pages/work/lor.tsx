@@ -5,9 +5,9 @@ import Head from 'next/head';
 import Layout from '@/components/Layout';
 import WorkPageLayout from '@/components/WorkPageLayout';
 
-import project from '@/utils/projects/fusics';
+import project from '@/utils/projects/lor';
 
-const Fusics: NextComponentType = () => (
+const Lor: NextComponentType = () => (
   <>
     <Layout>
       <Head>
@@ -19,8 +19,8 @@ const Fusics: NextComponentType = () => (
   </>
 );
 
-Fusics.getInitialProps = async () => {
+Lor.getInitialProps = async () => {
   return { transitionType: 'fade' };
 };
 
-export default Fusics;
+export default Lor;

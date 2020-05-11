@@ -19,7 +19,7 @@ const Work: NextComponentType = () => (
   <>
     <Layout>
       <Head>
-        <title>TheVÏe - Work</title>
+        <title>TheVÏe | Work</title>
       </Head>
 
       <Main>
