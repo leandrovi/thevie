@@ -9,7 +9,7 @@ import project from '@/utils/projects/lor';
 
 const Lor: NextComponentType = () => (
   <>
-    <Layout>
+    <Layout removePadding>
       <Head>
         <title>TheVÏe | {project.name}</title>
       </Head>

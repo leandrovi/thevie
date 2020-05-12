@@ -9,7 +9,7 @@ import project from '@/utils/projects/cafeRancheiro';
 
 const CafeRanacheiro: NextComponentType = () => (
   <>
-    <Layout>
+    <Layout removePadding>
       <Head>
         <title>TheVÏe | {project.name}</title>
       </Head>

@@ -12,6 +12,7 @@ import headerHeights from '@/styles/headerHeights';
 
 interface ContainerProps {
   position: number;
+  removePadding: boolean;
 }
 
 // export const FixedContainer = styled.div<FixedContainerProps>`
@@ -40,6 +41,12 @@ export const Container = styled.div<ContainerProps>`
     css`
       transform: translate(0px, -${props.position}px);
     `} */
+
+  ${props =>
+    props.removePadding &&
+    css`
+      padding: 0px;
+    `}
 
   transition: transform ease-in-out;
 

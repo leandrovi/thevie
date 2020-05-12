@@ -9,7 +9,7 @@ import project from '@/utils/projects/fusics';
 
 const Fusics: NextComponentType = () => (
   <>
-    <Layout>
+    <Layout removePadding>
       <Head>
         <title>TheVÏe | {project.name}</title>
       </Head>
