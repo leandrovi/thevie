@@ -9,9 +9,9 @@ const fusics: ProjectProps = {
   titleImgSrc: '/texts/fusics.svg',
   sectionTitle: 'Abc',
   textA:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac fermentum ex, at lobortis massa. Integer vel augue sem. Nam vitae pellentesque ex. Ut aliquam dapibus massa nec convallis. Nullam finibus congue efficitur. Praesent ipsum elit, tincidunt ut vehicula a, maximus vel tortor',
+    'Gilmar, product engineer and his son Vinícius, product designer.From a big dream, they founded Cria Criativa, a company that develops and design products creating many possibilities throughout forms, materials and purpose.',
   textB:
-    ' Aenean nec cursus nulla. In hac habitasse platea dictumst. Vestibulum viverra massa at purus condimentum, sit amet bibendum neque sodales. Curabitur vel eros ante.',
+    'The name, from Portuguese, means “Creative Breeding” - Comes from their creative way to think and design products - It all starts with creativity.”',
   imagesSrcs: [
     '/projects/fusics/1.jpg',
     '/projects/fusics/2.jpg',

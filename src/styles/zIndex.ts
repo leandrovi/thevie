@@ -1,7 +1,7 @@
 export default {
+  workPageBackground: -1,
   default: 0,
   workPage: {
-    header: 4,
     title: 5,
     content: 6,
   },

@@ -5,7 +5,9 @@ import { ProjectProps } from '@/utils/projects/interfaces';
 import {
   Main,
   Header,
-  TitleImage,
+  HeaderImg,
+  HeaderTitle,
+  FixedBackgroundTitle,
   DescriptionSection,
   GallerySection,
 } from './styles';
@@ -17,13 +19,37 @@ interface WorkPageProps {
 const WorkPageLayout: React.FC<WorkPageProps> = ({ project }) => {
   return (
     <Main>
-      <TitleImage>
+      <FixedBackgroundTitle>
         <img src={project.titleImgSrc} alt={project.name} />
-      </TitleImage>
+      </FixedBackgroundTitle>
 
       <Header>
-        <img src={project.thumbImgSrc} alt={project.name} />
+        <HeaderImg>
+          <img src={project.thumbImgSrc} alt={project.name} />
+        </HeaderImg>
+
+        <HeaderTitle>
+          <img src={project.titleImgSrc} alt={project.name} />
+        </HeaderTitle>
       </Header>
+
+      <DescriptionSection>
+        <h4>About</h4>
+
+        <div>
+          <p>{project.textA}</p>
+          <p>{project.textB}</p>
+        </div>
+      </DescriptionSection>
+
+      <DescriptionSection>
+        <h4>About</h4>
+
+        <div>
+          <p>{project.textA}</p>
+          <p>{project.textB}</p>
+        </div>
+      </DescriptionSection>
 
       <DescriptionSection>
         <h4>About</h4>
