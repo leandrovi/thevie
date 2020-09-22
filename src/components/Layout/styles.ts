@@ -1,30 +1,19 @@
 import styled, { css } from 'styled-components';
+import { Parallax } from '@react-spring/parallax';
 
 import device from '@/styles/device';
 import headerHeights from '@/styles/headerHeights';
 
-// interface FixedContainerProps {
-//   dimensions: {
-//     width: number;
-//     height: number;
-//   };
-// }
-
 interface ContainerProps {
-  position: number;
   removePadding: boolean;
 }
 
-// export const FixedContainer = styled.div<FixedContainerProps>`
-//   overflow: hidden;
-//   width: ${props => `calc(${props.dimensions.width} + 40px)`};
-//   height: ${props => props.dimensions.height};
-//   position: relative;
-// `;
+export const ParallaxContainer = styled(Parallax)`
+  /* overflow-y: hidden !important; */
+`;
 
 export const Container = styled.div<ContainerProps>`
   min-height: 100vh;
-  /* width: calc(100% - 40px); */
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -35,12 +24,6 @@ export const Container = styled.div<ContainerProps>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* ${props =>
-    props.position &&
-    css`
-      transform: translate(0px, -${props.position}px);
-    `} */
 
   ${props =>
     props.removePadding &&

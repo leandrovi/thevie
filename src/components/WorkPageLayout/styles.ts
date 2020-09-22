@@ -65,17 +65,13 @@ export const HeaderTitle = styled.div`
 
 export const DescriptionSection = styled.section`
   width: 100%;
-  padding: 15px 30px;
+  padding: 0px 30px 15px;
   margin: 15px 0;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   background: ${palette.grayShades.black};
   z-index: ${zIndex.workPage.content};
-
-  &:first-child {
-    background: pink;
-  }
 
   h4 {
     text-transform: uppercase;
@@ -98,6 +94,6 @@ export const DescriptionSection = styled.section`
 
 export const GallerySection = styled.section`
   width: 100%;
-  padding: 50px 30px 30px;
+  position: relative;
   z-index: ${zIndex.workPage.content};
 `;

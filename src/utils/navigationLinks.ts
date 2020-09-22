@@ -3,7 +3,7 @@ interface NavigationLinks {
   title: string;
 }
 
-const links = [
+const links: NavigationLinks[] = [
   {
     path: '/work',
     title: 'Work',

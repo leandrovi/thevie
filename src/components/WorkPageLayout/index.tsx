@@ -2,6 +2,8 @@ import React from 'react';
 
 import { ProjectProps } from '@/utils/projects/interfaces';
 
+import ProductGallery from './ProductGallery';
+
 import {
   Main,
   Header,
@@ -42,23 +44,9 @@ const WorkPageLayout: React.FC<WorkPageProps> = ({ project }) => {
         </div>
       </DescriptionSection>
 
-      <DescriptionSection>
-        <h4>About</h4>
-
-        <div>
-          <p>{project.textA}</p>
-          <p>{project.textB}</p>
-        </div>
-      </DescriptionSection>
-
-      <DescriptionSection>
-        <h4>About</h4>
-
-        <div>
-          <p>{project.textA}</p>
-          <p>{project.textB}</p>
-        </div>
-      </DescriptionSection>
+      <GallerySection>
+        <ProductGallery images={project.imagesSrcs} />
+      </GallerySection>
     </Main>
   );
 };
